@@ -18,7 +18,6 @@ $docsify.plugins = [].concat($docsify.plugins, function (hook, vm) {
     });
 
     hook.beforeEach(function (content, next) {
-        console.log(vm)
         var data = {}
 
         copy(data, vm.mustache);
