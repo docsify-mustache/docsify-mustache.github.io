@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+  <link rel="shortcut icon" href="doc/favicon.png" type="image/png"/>
+  <title>docsify-mustache</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'docsify-mustache',
+      repo: 'https://github.com/docsify-mustache/docsify-mustache.github.io',
+      logo: 'doc/logo.svg',
+      coverpage: 'doc/_coverpage',
+      homepage: 'doc/home.md',
+      noEmoji: true,
+      mustache: {
+        data: [
+          'doc/vars.json',
+          'doc/pom.xml',
+          {
+            author: {
+            name: 'John Smith',
+            email: 'john.smith@example.com'
+            }
+          }
+
+        ]
+      }
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/front-matter.min.js"></script>
+  <script src="//unpkg.com/docsify-copy-code"></script>
+  <script src="//unpkg.com/docsify-plugin-flexible-alerts"></script>
+  <script src="//unpkg.com/docsify-mustache"></script>
+  <style>
+    :root {
+      --theme-hue       : 207;
+      --theme-saturation: 44%;
+      --theme-lightness : 49%;
+      --cover-background-color: hsl(var(--theme-hue), var(--theme-saturation), 60%);
+      --theme-color: #4682B4;
+      --base-color: #12538a;
+      --heading-color: #12538a;
+      --code-inline-color: #12538a;
+      --code-theme-text: #12538a;
+      --code-inline-background: #f0f0f0;
+      --content-max-width: 80em;
+    }
+  </style>  
+</body>
+</html>
