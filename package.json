@@ -1,7 +1,7 @@
 {
   "name": "docsify-mustache",
-  "version": "1.0.0",
-  "description": "A Docsify plugin that allow preprocessing markdown documents with Mustache template engine. You can substitute variables in markdown documents using mustache syntax {{variable}} and {{variable.property}}. Variables can be load from various sources, including front matter section of markdown documents, external JSON or XML files and Docsify configuration.",
+  "version": "1.0.1",
+  "description": "A Docsify plugin that allow preprocessing markdown documents with Mustache template engine. You can substitute variables in markdown documents using mustache syntax {{variable}} and {{variable.property}}.",
   "main": "dist/docsify-mustache.min.js",
   "files": [
     "dist"
