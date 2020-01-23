@@ -1,0 +1,33 @@
+{
+  "name": "docsify-mustache",
+  "version": "1.0.0",
+  "description": "A Docsify plugin that allow preprocessing markdown documents with Mustache template engine. You can substitute variables in markdown documents using mustache syntax {{variable}} and {{variable.property}}. Variables can be load from various sources, including front matter section of markdown documents, external JSON or XML files and Docsify configuration.",
+  "main": "dist/docsify-mustache.min.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/docsify-mustache/docsify-mustache.github.io.git"
+  },
+  "keywords": [
+    "docsify",
+    "mustache",
+    "frontmatter"
+  ],
+  "author": "Ivan Szkiba",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/docsify-mustache/docsify-mustache.github.io/issues"
+  },
+  "homepage": "https://docsify-mustache.github.io",
+  "devDependencies": {
+    "mustache": "^4.0.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
