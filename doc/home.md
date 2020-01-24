@@ -16,13 +16,13 @@ A [Docsify](https://docsify.js.org) plugin that allow preprocessing markdown doc
 Add following script tag to your `index.html` after docsify.
 
 ```html
-<script src="//unpkg.com/docsify-mustache"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-mustache"></script>
 ```
 
 Optionally add docsify-front-matter plugin to access markdown front matter variables.
 
 ```html
-<script src="//unpkg.com/docsify/lib/plugins/front-matter.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/front-matter.min.js"></script>
 ```
 
 ## Options
@@ -57,7 +57,7 @@ window.$docsify = {
 
 ### package
 
-The plugin loads `/package.json` and make it available for Mustache as `package` variable. You can disable this feature setting `noPackage` option to `true` value:
+The plugin loads `package.json` and make it available for Mustache as `package` variable. You can disable this feature setting `noPackage` option to `true` value:
 
 ```javascript
 window.$docsify = {
@@ -104,7 +104,7 @@ Erat lacte neve vulnus audistis infelix sidera tuae **{{answer}}**.
 
 ### package.json
 
-The plugin loads `/package.json` and make it available for Mustache as `package` variable.
+The plugin loads `package.json` and make it available for Mustache as `package` variable.
 
 <!-- tabs:start -->
 

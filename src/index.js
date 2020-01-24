@@ -11,7 +11,7 @@ $docsify.plugins = [].concat($docsify.plugins, function (hook, vm) {
         var conf = window.$docsify.mustache || {};
 
         if (!conf.noPackage) {
-            load('/package.json', 'package');
+            load('package.json', 'package');
         }
 
         if (conf.data) {
@@ -52,6 +52,13 @@ $docsify.plugins = [].concat($docsify.plugins, function (hook, vm) {
     }
 
     function load(url, key) {
+        function done() {
+            delete loading[url];
+            if (Object.keys(loading).length == 0 && onload) {
+                onload();
+                onload = undefined;
+            }
+        }
         loading[url] = true;
         Docsify.get(url, true)
             .then((response) => {
@@ -62,11 +69,11 @@ $docsify.plugins = [].concat($docsify.plugins, function (hook, vm) {
                 } else {
                     copy(vm.mustache, data);
                 }
-                delete loading[url];
-                if (Object.keys(loading).length == 0 && onload) {
-                    onload();
-                    onload = undefined;
-                }
+
+                done();
+            }, (error) => {
+                console.log(error);
+                done();
             });
     }
 

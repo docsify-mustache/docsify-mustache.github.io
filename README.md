@@ -11,13 +11,55 @@ A [Docsify](https://docsify.js.org) plugin that allow preprocessing markdown doc
 Add following script tag to your `index.html` after docsify.
 
 ```html
-<script src="//unpkg.com/docsify-mustache"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-mustache"></script>
 ```
 
 Optionally add docsify-front-matter plugin to access markdown front matter variables.
 
 ```html
-<script src="//unpkg.com/docsify/lib/plugins/front-matter.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/front-matter.min.js"></script>
+```
+
+## Options
+
+### data
+
+You can load Mustache variables with `data` option. The value can be a *string*, *object* or *array*.
+
+ - *string* value interpreted as data file URL (relative or absolute). Both JSON and XML data file formats are supported.
+   - properties from JSON data file will be available as Mustache variables
+   - XML root element will be mapped to Mustache variable with root elements tag name as variable name
+ - *object* properties will be mapped to Mustache variables using property name as variable name
+ - *array* may be use to specify multiple string or object values as data sources
+ 
+Example:
+
+```javascript
+window.$docsify = {
+  mustache: {
+    data: [
+      'doc/vars.json',
+      'doc/pom.xml',
+      {
+        question: 'What is your favorite number?'
+      }
+    ]
+  }
+}
+```
+
+> There is no way to access XML attributes, tag names used for hierarchy and for referring element's inner text.
+
+### package
+
+The plugin loads `package.json` and make it available for Mustache as `package` variable. You can disable this feature setting `noPackage` option to `true` value:
+
+```javascript
+window.$docsify = {
+  mustache: {
+    noPackage : true
+  }
+}
 ```
 
 ## Documentation
