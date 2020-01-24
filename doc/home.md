@@ -57,7 +57,7 @@ window.$docsify = {
 
 ### package
 
-The plugin loads `/package.json` and make it available for Mustache as `package` variable. You can disable this feature setting `noPackage` option to `true` value:
+The plugin loads `package.json` and make it available for Mustache as `package` variable. You can disable this feature setting `noPackage` option to `true` value:
 
 ```javascript
 window.$docsify = {
@@ -104,7 +104,7 @@ Erat lacte neve vulnus audistis infelix sidera tuae **{{answer}}**.
 
 ### package.json
 
-The plugin loads `/package.json` and make it available for Mustache as `package` variable.
+The plugin loads `package.json` and make it available for Mustache as `package` variable.
 
 <!-- tabs:start -->
 

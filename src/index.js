@@ -11,7 +11,7 @@ $docsify.plugins = [].concat($docsify.plugins, function (hook, vm) {
         var conf = window.$docsify.mustache || {};
 
         if (!conf.noPackage) {
-            load('/package.json', 'package');
+            load('package.json', 'package');
         }
 
         if (conf.data) {
