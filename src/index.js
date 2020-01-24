@@ -1,6 +1,8 @@
 $docsify.plugins = [].concat($docsify.plugins, function (hook, vm) {
 
     let render = require("mustache").render;
+    let loading = {};
+    var onload;
 
     hook.init(function () {
 
@@ -18,14 +20,23 @@ $docsify.plugins = [].concat($docsify.plugins, function (hook, vm) {
     });
 
     hook.beforeEach(function (content, next) {
-        var data = {}
 
-        copy(data, vm.mustache);
-        if (vm.frontmatter) {
-            copy(data, vm.frontmatter);
+        var action = function () {
+            var data = {}
+
+            copy(data, vm.mustache);
+            if (vm.frontmatter) {
+                copy(data, vm.frontmatter);
+            }
+
+            next(render(content, data));
+        };
+
+        if (Object.keys(loading).length == 0) {
+            action();
+        } else {
+            onload = action;
         }
-
-        next(render(content, data));
     });
 
     function data(value) {
@@ -41,7 +52,8 @@ $docsify.plugins = [].concat($docsify.plugins, function (hook, vm) {
     }
 
     function load(url, key) {
-        Docsify.get(url)
+        loading[url] = true;
+        Docsify.get(url, true)
             .then((response) => {
                 let data = parse(response);
 
@@ -49,6 +61,11 @@ $docsify.plugins = [].concat($docsify.plugins, function (hook, vm) {
                     vm.mustache[key] = data;
                 } else {
                     copy(vm.mustache, data);
+                }
+                delete loading[url];
+                if (Object.keys(loading).length == 0 && onload) {
+                    onload();
+                    onload = undefined;
                 }
             });
     }
