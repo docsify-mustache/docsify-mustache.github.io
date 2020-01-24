@@ -11,13 +11,13 @@ A [Docsify](https://docsify.js.org) plugin that allow preprocessing markdown doc
 Add following script tag to your `index.html` after docsify.
 
 ```html
-<script src="//unpkg.com/docsify-mustache"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-mustache"></script>
 ```
 
 Optionally add docsify-front-matter plugin to access markdown front matter variables.
 
 ```html
-<script src="//unpkg.com/docsify/lib/plugins/front-matter.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/front-matter.min.js"></script>
 ```
 
 ## Options
