@@ -17,7 +17,11 @@
   "keywords": [
     "docsify",
     "mustache",
-    "frontmatter"
+    "variable",
+    "substitution",
+    "substitute",
+    "frontmatter",
+    "front matter"
   ],
   "author": "Ivan Szkiba",
   "license": "MIT",
